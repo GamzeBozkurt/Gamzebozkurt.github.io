@@ -82,6 +82,9 @@
 
     .pill { display: inline-flex; align-items: center; gap: .375rem; padding: .375rem .75rem; border-radius: 9999px; font-size: .8125rem; font-weight: 500; line-height: 1.2; border: 1px solid; }
 
+    #section-nav nav { scrollbar-width: none; }
+    #section-nav nav::-webkit-scrollbar { display: none; }
+
     section[id] { scroll-margin-top: 136px; }
     @media (min-width: 1024px) { section[id] { scroll-margin-top: 96px; } }
 
@@ -111,10 +114,6 @@
         </a>
         <a href="https://scholar.google.com/citations?hl=en&user=Q7MxlWIAAAAJ&view_op=list_works" target="_blank" rel="noopener noreferrer" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-navy" aria-label="Google Scholar">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>
-        </a>
-        <a href="Gamze_Sahinbas_Resume.pdf" download class="ml-1 hidden items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-ink hover:border-navy/40 hover:text-navy sm:inline-flex">
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
-          PDF
         </a>
       </div>
     </div>
@@ -199,10 +198,6 @@
             <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#leadership"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Leadership</a></li>
             <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#contact"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Contact</a></li>
           </ul>
-          <a href="Gamze_Sahinbas_Resume.pdf" download class="mt-6 hidden items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-ink shadow-sm hover:border-navy/40 hover:text-navy lg:inline-flex">
-            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
-            Download PDF CV
-          </a>
         </nav>
       </aside>
 
@@ -628,9 +623,6 @@
                 <li><a href="mailto:gamzesahinbas518@gmail.com" class="flex items-center gap-3 hover:text-teal-100">
                   <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.24a2.25 2.25 0 01-1.07 1.92l-7.5 4.62a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.92V6.75"/></svg>
                   gamzesahinbas518@gmail.com</a></li>
-                <li><a href="tel:+905319265438" class="flex items-center gap-3 hover:text-teal-100">
-                  <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.28 6.72 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.37c0-.52-.35-.97-.85-1.09l-4.42-1.11c-.44-.11-.9.06-1.17.42l-.97 1.29a1.13 1.13 0 01-1.21.38 12.04 12.04 0 01-7.14-7.14 1.13 1.13 0 01.38-1.21l1.29-.97c.36-.27.53-.73.42-1.17L6.96 3.1a1.13 1.13 0 00-1.09-.85H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                  +90 531 926 54 38</a></li>
                 <li class="flex items-center gap-3">
                   <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.14-7.5 11.25-7.5 11.25S4.5 17.64 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
                   Kağıthane, Istanbul, Türkiye</li>
