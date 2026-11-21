@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamze Şahinbaş — Molecular Biology & Biotechnology</title>
+  <meta name="description" content="Gamze Şahinbaş — Molecular biology and biotechnology researcher (MSc, Istanbul Technical University) focused on peptide design, protein research and drug development." />
+  <meta property="og:title" content="Gamze Şahinbaş — Molecular Biology & Biotechnology" />
+  <meta property="og:description" content="Researcher in peptide design, protein research and drug development." />
+  <meta property="og:image" content="cv.jpeg" />
+
+  <!-- Fonts: Plus Jakarta Sans (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#F8FAFC',
+            ink: '#0F172A',
+            navy: { DEFAULT: '#1E3A8A', 50: '#EEF2FF', 100: '#E0E7FF', 700: '#1E40AF', 900: '#172554' },
+            teal: { DEFAULT: '#0F766E', 50: '#F0FDFA', 100: '#CCFBF1' },
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 1px 2px rgba(15,23,42,.04), 0 8px 24px -8px rgba(15,23,42,.10)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { background: #F8FAFC; color: #0F172A; -webkit-font-smoothing: antialiased; }
+
+    /* Subtle scientific grid backdrop for the hero */
+    .hero-bg {
+      background-image:
+        radial-gradient(ellipse 70% 55% at 50% 40%, rgba(30,58,138,.07), transparent 70%),
+        linear-gradient(rgba(15,23,42,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,23,42,.045) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+      -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent);
+              mask-image: linear-gradient(to bottom, #000 75%, transparent);
+    }
+
+    /* Reveal-on-scroll */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .hero-in > * { opacity: 0; transform: translateY(10px); animation: heroIn .8s ease forwards; }
+    .hero-in > *:nth-child(1) { animation-delay: .05s; }
+    .hero-in > *:nth-child(2) { animation-delay: .15s; }
+    .hero-in > *:nth-child(3) { animation-delay: .25s; }
+    .hero-in > *:nth-child(4) { animation-delay: .35s; }
+    .hero-in > *:nth-child(5) { animation-delay: .45s; }
+    @keyframes heroIn { to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .hero-in > * { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+      .scroll-cue { animation: none !important; }
+    }
+
+    .scroll-cue { animation: bob 2.2s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+    /* Section nav active state */
+    .nav-link[aria-current="true"] { color: #1E3A8A; background: #EEF2FF; }
+    .nav-link[aria-current="true"] .nav-dot { background: #1E3A8A; transform: scale(1.25); }
+
+    /* Timeline */
+    .timeline { position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(#CBD5E1, #E2E8F0); border-radius: 2px; }
+
+    .pill { display: inline-flex; align-items: center; gap: .375rem; padding: .375rem .75rem; border-radius: 9999px; font-size: .8125rem; font-weight: 500; line-height: 1.2; border: 1px solid; }
+
+    section[id] { scroll-margin-top: 136px; }
+    @media (min-width: 1024px) { section[id] { scroll-margin-top: 96px; } }
+
+    /* Print: produce a clean CV */
+    @media print {
+      #hero, #topbar, #section-nav, #to-top, .no-print { display: none !important; }
+      body { background: #fff; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .shadow-soft { box-shadow: none !important; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-[15px] leading-relaxed">
+
+  <!-- ============ TOP BAR (appears after leaving the hero) ============ -->
+  <header id="topbar" class="fixed inset-x-0 top-0 z-40 -translate-y-full transition-transform duration-300 border-b border-slate-200/80 bg-paper/85 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#hero" class="flex items-center gap-3">
+        <img src="cv.jpeg" alt="" class="h-9 w-9 rounded-full object-cover ring-1 ring-slate-200" />
+        <span class="font-display font-bold tracking-tight text-ink">Gamze Şahinbaş</span>
+      </a>
+      <div class="flex items-center gap-1 sm:gap-2">
+        <a href="https://www.linkedin.com/in/gamze-%C5%9Fahinba%C5%9F-39232515b/" target="_blank" rel="noopener noreferrer" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-navy" aria-label="LinkedIn">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=Q7MxlWIAAAAJ&view_op=list_works" target="_blank" rel="noopener noreferrer" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-navy" aria-label="Google Scholar">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>
+        </a>
+        <a href="Gamze_Sahinbas_Resume.pdf" download class="ml-1 hidden items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-ink hover:border-navy/40 hover:text-navy sm:inline-flex">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+          PDF
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== STAGE 1 · HERO ===================== -->
+  <section id="hero" class="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 py-16 sm:px-6">
+    <div class="hero-bg pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+    <div class="hero-in relative mx-auto flex max-w-2xl flex-col items-center text-center">
+      <!-- Photo -->
+      <div class="relative">
+        <div class="absolute -inset-2 rounded-full bg-gradient-to-br from-navy/15 via-transparent to-teal/15 blur-md" aria-hidden="true"></div>
+        <img src="cv.jpeg" alt="Portrait of Gamze Şahinbaş"
+             class="relative h-36 w-36 rounded-full border-4 border-white object-cover object-[50%_30%] shadow-soft ring-1 ring-slate-200 sm:h-44 sm:w-44" />
+      </div>
+
+      <!-- Name & title -->
+      <div class="mt-7">
+        <h1 class="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Gamze Şahinbaş</h1>
+        <p class="mt-3 font-display text-base font-semibold text-navy sm:text-lg">Molecular Biologist &amp; Biotechnologist</p>
+        <p class="mt-1 text-sm text-slate-500">MSc, Molecular Biology–Genetics &amp; Biotechnology · Istanbul Technical University</p>
+      </div>
+
+      <!-- Short intro -->
+      <p class="mt-6 max-w-xl text-[15px] text-slate-600 sm:text-base">
+        Researcher in peptide design and protein science, developing inhibitory peptides against the ERAD machinery in cancer and protein-folding diseases — and turning complex laboratory data into clear, well-structured insight.
+      </p>
+
+      <!-- Research keywords -->
+      <ul class="mt-5 flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-600" aria-label="Research areas">
+        <li class="rounded-full border border-slate-200 bg-white/80 px-3 py-1">Peptide Design</li>
+        <li class="rounded-full border border-slate-200 bg-white/80 px-3 py-1">Protein Research</li>
+        <li class="rounded-full border border-slate-200 bg-white/80 px-3 py-1">Drug Development</li>
+        <li class="rounded-full border border-slate-200 bg-white/80 px-3 py-1">ERAD · p97/VCP</li>
+      </ul>
+
+      <!-- 3 CTAs -->
+      <div class="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center">
+        <a href="https://www.linkedin.com/in/gamze-%C5%9Fahinba%C5%9F-39232515b/" target="_blank" rel="noopener noreferrer"
+           class="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-[#0A66C2]/40 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2">
+          <svg class="h-5 w-5 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+          <svg class="h-3.5 w-3.5 text-slate-400 transition group-hover:text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+
+        <a href="https://scholar.google.com/citations?hl=en&user=Q7MxlWIAAAAJ&view_op=list_works" target="_blank" rel="noopener noreferrer"
+           class="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-[#4285F4]/40 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2">
+          <svg class="h-5 w-5 text-[#4285F4]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.16 4.44L24 9.5z"/></svg>
+          Google Scholar
+          <svg class="h-3.5 w-3.5 text-slate-400 transition group-hover:text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+
+        <a href="#cv" data-scroll
+           class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-navy-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.59a1 1 0 01.7.29l5.42 5.42a1 1 0 01.29.7V19a2 2 0 01-2 2z"/></svg>
+          View Digital CV
+        </a>
+      </div>
+    </div>
+
+    <a href="#cv" data-scroll class="scroll-cue no-print absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full p-2 text-slate-400 hover:text-navy" aria-label="Scroll to CV">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ===================== STAGE 2 · DIGITAL CV ===================== -->
+  <main id="cv" class="relative border-t border-slate-200 bg-paper">
+    <div class="mx-auto max-w-6xl px-4 pb-24 pt-20 sm:px-6 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
+
+      <!-- Section nav (sticky on desktop, horizontal scroll on mobile) -->
+      <aside id="section-nav" class="no-print sticky top-16 z-30 lg:static">
+        <nav class="lg:sticky -mx-4 mb-10 overflow-x-auto border-b border-slate-200 bg-paper/90 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:top-24 lg:mx-0 lg:mb-0 lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-0" aria-label="CV sections">
+          <p class="mb-3 hidden text-xs font-semibold uppercase tracking-[.14em] text-slate-400 lg:block">Curriculum Vitae</p>
+          <ul class="flex gap-1 whitespace-nowrap lg:flex-col">
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#about"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>About</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#experience"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Experience</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#education"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Education</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#publications"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Publications</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#skills"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Skills</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#honors"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Funding &amp; Languages</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#leadership"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Leadership</a></li>
+            <li><a class="nav-link flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:text-ink" href="#contact"><span class="nav-dot h-1.5 w-1.5 rounded-full bg-slate-300 transition"></span>Contact</a></li>
+          </ul>
+          <a href="Gamze_Sahinbas_Resume.pdf" download class="mt-6 hidden items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-ink shadow-sm hover:border-navy/40 hover:text-navy lg:inline-flex">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+            Download PDF CV
+          </a>
+        </nav>
+      </aside>
+
+      <div class="space-y-20">
+
+        <!-- ---------- ABOUT ---------- -->
+        <section id="about" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">01 · Profile</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">About Me</h2>
+          <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+            <p class="text-slate-700">
+              I am a molecular biology and biotechnology professional with experience in advanced research and project management. I have worked extensively on complex laboratory studies and am comfortable turning technical data into clear, well-structured outputs.
+            </p>
+            <p class="mt-4 text-slate-700">
+              Alongside my technical background, I am particularly strong at explaining scientific work to different audiences through reports and presentations, helping align research outcomes with practical and strategic goals. I am a proactive problem solver, deeply interested in research, and eager to apply my scientific background and interpersonal skills to achieve strategic goals and deliver high-quality results in technical roles.
+            </p>
+            <dl class="mt-7 grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 sm:grid-cols-4">
+              <div><dt class="text-xs text-slate-500">Research projects</dt><dd class="font-display text-2xl font-bold text-navy">4</dd></div>
+              <div><dt class="text-xs text-slate-500">Congress contributions</dt><dd class="font-display text-2xl font-bold text-navy">6</dd></div>
+              <div><dt class="text-xs text-slate-500">Funding bodies</dt><dd class="font-display text-lg font-bold leading-8 text-navy">TÜBİTAK · BAP</dd></div>
+              <div><dt class="text-xs text-slate-500">Based in</dt><dd class="font-display text-2xl font-bold text-navy">Istanbul</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- ---------- EXPERIENCE ---------- -->
+        <section id="experience" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">02 · Work &amp; Research</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Professional Experience</h2>
+
+          <ol class="timeline mt-8 space-y-6">
+            <!-- 1 -->
+            <li class="relative pl-10">
+              <span class="absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-navy bg-white" aria-hidden="true"></span>
+              <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink">Lead Researcher, MSc Thesis</h3>
+                    <p class="text-sm font-medium text-navy">TÜBİTAK 1001 · Scientific and Technological Research Council of Türkiye</p>
+                  </div>
+                  <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal ring-1 ring-teal/20">2025 – Present</span>
+                </div>
+                <p class="mt-3 text-sm italic text-slate-600">Design and application of peptides targeting the Bag-1S:p97/VCP complex to regulate the ERAD mechanism in breast cancer</p>
+                <ul class="mt-4 grid gap-x-6 gap-y-1.5 text-sm text-slate-700 sm:grid-cols-2">
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Coordinated experimental timelines and project activities</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Maintained complete and accurate study documentation</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Recorded, verified, and analyzed research data</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Prepared scientific and technical reports</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Supported quality and compliance processes</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Collaborated with multidisciplinary research teams</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Mentored junior master students on lab protocols</li>
+                </ul>
+              </article>
+            </li>
+
+            <!-- 2 -->
+            <li class="relative pl-10">
+              <span class="absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-navy bg-white" aria-hidden="true"></span>
+              <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink">Researcher</h3>
+                    <p class="text-sm font-medium text-navy">Istanbul Technical University · Scientific Research Projects (BAP)</p>
+                  </div>
+                  <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal ring-1 ring-teal/20">2024 – Present</span>
+                </div>
+                <p class="mt-3 text-sm italic text-slate-600">Development of peptide-based formulations targeting the ERAD mechanism in diseases associated with protein folding disorders — a cystic fibrosis model</p>
+                <ul class="mt-4 grid gap-x-6 gap-y-1.5 text-sm text-slate-700 sm:grid-cols-2">
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Organized and prioritized project tasks to meet experimental deadlines</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Recorded, verified, and analyzed research data</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Prepared scientific and technical reports</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Coordinated responsibilities and workflow within the research team</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Mentored junior master students on lab protocols</li>
+                </ul>
+              </article>
+            </li>
+
+            <!-- 3 -->
+            <li class="relative pl-10">
+              <span class="absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-navy bg-white" aria-hidden="true"></span>
+              <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink">Lead Researcher, MSc Thesis</h3>
+                    <p class="text-sm font-medium text-navy">ITU Scientific Research Projects (BAP) · TÜBİTAK BİDEB</p>
+                  </div>
+                  <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal ring-1 ring-teal/20">2024 – Present</span>
+                </div>
+                <p class="mt-3 text-sm italic text-slate-600">Targeting the Bag-1S–p97/VCP complex with a novel inhibitory peptide in ERAD</p>
+                <ul class="mt-4 space-y-1.5 text-sm text-slate-700">
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Istanbul Technical University Scientific Research Projects (BAP), 2024 – Present</li>
+                  <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-navy/60"></span>Scientific and Technological Research Council of Türkiye (TÜBİTAK), BİDEB, 2024 – 2025</li>
+                </ul>
+              </article>
+            </li>
+
+            <!-- 4 -->
+            <li class="relative pl-10">
+              <span class="absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-slate-400 bg-white" aria-hidden="true"></span>
+              <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink">Researcher</h3>
+                    <p class="text-sm font-medium text-navy">Istanbul Technical University · Scientific Research Projects (BAP)</p>
+                  </div>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 ring-1 ring-slate-200">2023 – 2025</span>
+                </div>
+                <p class="mt-3 text-sm italic text-slate-600">Development of a novel nanobody integrated with SARS-CoV-2-targeted peptides for COVID-19 treatment</p>
+              </article>
+            </li>
+
+            <!-- 5 -->
+            <li class="relative pl-10">
+              <span class="absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-slate-400 bg-white" aria-hidden="true"></span>
+              <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+                <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink">Intern</h3>
+                    <p class="text-sm font-medium text-navy">Istanbul University-Cerrahpaşa · Cerrahpaşa Faculty of Medicine</p>
+                  </div>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 ring-1 ring-slate-200">Jul 2022 – Sep 2022</span>
+                </div>
+              </article>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ---------- EDUCATION ---------- -->
+        <section id="education" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">03 · Academic Background</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Education</h2>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <article class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="flex items-center justify-between gap-3">
+                <span class="rounded-md bg-navy px-2 py-0.5 text-xs font-bold tracking-wide text-white">M.Sc.</span>
+                <span class="text-sm font-medium text-slate-500">2023 – 2026</span>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-bold leading-snug">Molecular Biology–Genetics and Biotechnology</h3>
+              <p class="text-sm font-medium text-navy">Istanbul Technical University</p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Biotechnology</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Protein Research</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Drug Development</span>
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Peptides</span>
+              </div>
+              <div class="mt-5 border-t border-slate-100 pt-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Thesis</p>
+                <p class="mt-1 text-sm text-slate-700">Design and Application of Peptides Targeting the Bag-1S:p97/VCP Complex to Regulate the ERAD Mechanism in Breast Cancer</p>
+              </div>
+            </article>
+
+            <article class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="flex items-center justify-between gap-3">
+                <span class="rounded-md bg-slate-700 px-2 py-0.5 text-xs font-bold tracking-wide text-white">B.Sc.</span>
+                <span class="text-sm font-medium text-slate-500">2017 – 2023</span>
+              </div>
+              <h3 class="mt-4 font-display text-lg font-bold leading-snug">Molecular Biology and Genetics</h3>
+              <p class="text-sm font-medium text-navy">Istanbul Technical University</p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600">Molecular Immunology</span>
+              </div>
+              <div class="mt-5 border-t border-slate-100 pt-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Thesis</p>
+                <p class="mt-1 text-sm text-slate-700">Investigation of CARD9 and RIG-I Protein Interaction in Human Eosinophil Cell Line</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- PUBLICATIONS ---------- -->
+        <section id="publications" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">04 · Scholarly Output</p>
+          <div class="mt-2 flex flex-wrap items-end justify-between gap-4">
+            <h2 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">Publications &amp; Presentations</h2>
+            <div class="no-print flex gap-1 rounded-lg border border-slate-200 bg-white p-1 text-sm" role="group" aria-label="Filter publications">
+              <button type="button" data-filter="all" class="pub-filter rounded-md bg-navy px-3 py-1 font-medium text-white">All</button>
+              <button type="button" data-filter="presenter" class="pub-filter rounded-md px-3 py-1 font-medium text-slate-600 hover:text-ink">As presenter</button>
+              <button type="button" data-filter="journal" class="pub-filter rounded-md px-3 py-1 font-medium text-slate-600 hover:text-ink">Journal</button>
+            </div>
+          </div>
+
+          <!--
+            To add a DOI/link to an entry: fill in its data-doi attribute (full URL).
+            Entries with an empty data-doi show no link button.
+          -->
+          <ol id="pub-list" class="mt-8 space-y-4">
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="journal first-author" data-doi="https://doi.org/10.1002/2211-5463.70071">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2025</span>
+                <span class="rounded-full bg-navy-50 px-2 py-0.5 font-semibold text-navy">Journal abstract</span>
+                <span class="rounded-full bg-teal-50 px-2 py-0.5 font-semibold text-teal">First author</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Development of inhibitory peptides to disrupt Bag-1S:p97/VCP complex</h3>
+              <p class="mt-1 text-sm text-slate-600"><strong class="text-ink">Sahinbas, G.</strong>, Basturk, E., Dingiloglu, B., Boncuk, H. D., &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">FEBS Open Bio, 15: P-22-004</p>
+            </li>
+
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="presenter first-author" data-doi="">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2025</span>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">Poster</span>
+                <span class="rounded-full bg-amber-50 px-2 py-0.5 font-semibold text-amber-700">Presenter</span>
+                <span class="rounded-full bg-teal-50 px-2 py-0.5 font-semibold text-teal">First author</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Structural and Functional Characterization of Bag-1S:p97/VCP Binding Site</h3>
+              <p class="mt-1 text-sm text-slate-600"><strong class="text-ink">Sahinbas, G.</strong>, Basturk, E., Ozcit, A.G., Akbas, Y., &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">7th National Proteomics Congress</p>
+            </li>
+
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="" data-doi="">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2025</span>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">Poster</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Investigating Novel Interaction Interfaces Between Hsp70/Hsc70 and Bag-1 Using HDX-MS</h3>
+              <p class="mt-1 text-sm text-slate-600">Gulbahar, C. C., Turk, M., <strong class="text-ink">Sahinbas, G.</strong>, Akbas, Y., Barcin, U.N., &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">7th National Proteomics Congress</p>
+            </li>
+
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="" data-doi="">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2025</span>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">Poster</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Bag1:Bcl-2 Interaction Surface: Structural and Functional Insights in Apoptosis</h3>
+              <p class="mt-1 text-sm text-slate-600">Turk, M., Azman, O.D., Gulbahar, C. C., Alpugan, Y.N., <strong class="text-ink">Sahinbas, G.</strong>, &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">7th National Proteomics Congress</p>
+            </li>
+
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="presenter" data-doi="">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2024</span>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">Poster</span>
+                <span class="rounded-full bg-amber-50 px-2 py-0.5 font-semibold text-amber-700">Presenter</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Investigation of Bag-1S:p97/VCP Interaction in Breast Cancer Cell Line</h3>
+              <p class="mt-1 text-sm text-slate-600">Basturk, E., <strong class="text-ink">Sahinbas, G.</strong>, Dingiloglu, B., Gulbahar, C. C., &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">9th International Congress of the Molecular Biology Association of Turkey</p>
+            </li>
+
+            <li class="pub rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6" data-tags="" data-doi="">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-semibold text-slate-500">2024</span>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">Poster</span>
+              </div>
+              <h3 class="mt-2 font-display font-bold leading-snug text-ink">Redesign of SARS-CoV-2 Nanobodies for COVID-19 Treatment</h3>
+              <p class="mt-1 text-sm text-slate-600">Gulbahar, C. C., <strong class="text-ink">Sahinbas, G.</strong>, Basturk, E., Dingiloglu, B., Golcuk, M., Gur, M., &amp; Dinler Doganay, G.</p>
+              <p class="mt-1 text-sm italic text-slate-500">9th International Congress of the Molecular Biology Association of Turkey</p>
+            </li>
+          </ol>
+          <p id="pub-empty" class="mt-6 hidden text-sm text-slate-500">No entries match this filter.</p>
+          <a href="https://scholar.google.com/citations?hl=en&user=Q7MxlWIAAAAJ&view_op=list_works" target="_blank" rel="noopener noreferrer" class="no-print mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:underline">
+            See all works and citations on Google Scholar
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </section>
+
+        <!-- ---------- SKILLS ---------- -->
+        <section id="skills" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">05 · Toolkit</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Technical &amp; Software Skills</h2>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="flex items-center gap-2 font-display font-bold">
+                <svg class="h-5 w-5 text-navy" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.1v5.71a2.25 2.25 0 01-.66 1.6L5 14.5m4.75-11.4a24.3 24.3 0 014.5 0m-4.5 0c-.25.02-.5.05-.75.08m5.25-.08v5.71c0 .6.24 1.17.66 1.6L19.8 15.3M14.25 3.1c.25.02.5.05.75.08M19.8 15.3l-1.57.39a9.07 9.07 0 01-6.23-.69 9.07 9.07 0 00-6.23-.69L5 14.5m14.8.8l1.4 1.4c1.23 1.23.65 3.32-1.07 3.6A48.3 48.3 0 0112 21a48.3 48.3 0 01-8.13-.69c-1.72-.29-2.3-2.38-1.07-3.6L5 14.5"/></svg>
+                Research Focus
+              </h3>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="pill border-navy/15 bg-navy-50 text-navy">Peptide Design</span>
+                <span class="pill border-navy/15 bg-navy-50 text-navy">Protein–Protein Interactions</span>
+                <span class="pill border-navy/15 bg-navy-50 text-navy">ERAD Mechanism</span>
+                <span class="pill border-navy/15 bg-navy-50 text-navy">Drug Development</span>
+                <span class="pill border-navy/15 bg-navy-50 text-navy">Nanobodies</span>
+                <span class="pill border-navy/15 bg-navy-50 text-navy">Molecular Immunology</span>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="flex items-center gap-2 font-display font-bold">
+                <svg class="h-5 w-5 text-teal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+                Structural Biology &amp; Bioinformatics
+              </h3>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="pill border-teal/20 bg-teal-50 text-teal">AlphaFold3</span>
+                <span class="pill border-teal/20 bg-teal-50 text-teal">PyMOL</span>
+                <span class="pill border-teal/20 bg-teal-50 text-teal">ChimeraX</span>
+                <span class="pill border-teal/20 bg-teal-50 text-teal">NCBI Tools</span>
+                <span class="pill border-teal/20 bg-teal-50 text-teal">SnapGene</span>
+                <span class="pill border-teal/20 bg-teal-50 text-teal">Sequencher</span>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="flex items-center gap-2 font-display font-bold">
+                <svg class="h-5 w-5 text-navy" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                Data Analysis &amp; Productivity
+              </h3>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">GraphPad Prism</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Image Lab</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Microsoft Office</span>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="flex items-center gap-2 font-display font-bold">
+                <svg class="h-5 w-5 text-teal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Project &amp; Research Management
+              </h3>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Project Coordination</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Study Coordination</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Data Management</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Data Entry &amp; Validation</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Reporting &amp; Record Keeping</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Scientific Communication</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Presentations</span>
+                <span class="pill border-slate-200 bg-slate-50 text-slate-700">Mentoring</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- FUNDING & LANGUAGES ---------- -->
+        <section id="honors" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">06 · Recognition</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Funding, Grants &amp; Languages</h2>
+
+          <div class="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="font-display font-bold">Research Funding</h3>
+              <ul class="mt-4 divide-y divide-slate-100 text-sm">
+                <li class="flex items-start justify-between gap-4 py-3 first:pt-0">
+                  <div><p class="font-semibold text-ink">TÜBİTAK 1001 Research Project</p><p class="text-slate-500">Lead Researcher · MSc thesis project</p></div>
+                  <span class="shrink-0 text-slate-500">2025 –</span>
+                </li>
+                <li class="flex items-start justify-between gap-4 py-3">
+                  <div><p class="font-semibold text-ink">TÜBİTAK BİDEB Support</p><p class="text-slate-500">Lead Researcher · Bag-1S–p97/VCP inhibitory peptide</p></div>
+                  <span class="shrink-0 text-slate-500">2024 – 2025</span>
+                </li>
+                <li class="flex items-start justify-between gap-4 py-3 last:pb-0">
+                  <div><p class="font-semibold text-ink">ITU Scientific Research Projects (BAP)</p><p class="text-slate-500">Three funded projects — ERAD, cystic fibrosis model, SARS-CoV-2 nanobody</p></div>
+                  <span class="shrink-0 text-slate-500">2023 –</span>
+                </li>
+              </ul>
+              <!-- Add certificates / awards here using the same <li> pattern. -->
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="font-display font-bold">Languages</h3>
+              <ul class="mt-4 space-y-5 text-sm">
+                <li>
+                  <div class="flex items-baseline justify-between"><span class="font-semibold text-ink">Turkish</span><span class="text-slate-500">Native</span></div>
+                  <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-full rounded-full bg-navy"></div></div>
+                </li>
+                <li>
+                  <div class="flex items-baseline justify-between"><span class="font-semibold text-ink">English</span><span class="text-slate-500">Professional working</span></div>
+                  <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-4/5 rounded-full bg-teal"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- LEADERSHIP & ACTIVITIES ---------- -->
+        <section id="leadership" class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal">07 · Beyond the Lab</p>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Leadership &amp; Activities</h2>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="font-display font-bold leading-snug">ITU HBSK Folk Dance Club</h3>
+                <span class="shrink-0 text-sm text-slate-500">2017 – Present</span>
+              </div>
+              <div class="mt-4 space-y-4 text-sm">
+                <div>
+                  <p class="font-semibold text-navy">Club President <span class="font-normal text-slate-500">· 2019 – 2022</span></p>
+                  <p class="mt-1 text-slate-700">Coordinated team activities, organized cultural trips, and managed the planning of large-scale stage performances.</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-navy">Folk Dancer</p>
+                  <p class="mt-1 text-slate-700">Performed in stage productions including:</p>
+                  <ul class="mt-1.5 space-y-1 text-slate-600">
+                    <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal/70"></span>“Yadigar” Folk Dance Performance (2019)</li>
+                    <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal/70"></span>“Anadolu Ekspresi” Folk Dance Performance (2018)</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="flex items-start justify-between gap-3">
+                <h3 class="font-display font-bold leading-snug">ITU MBG Student Club</h3>
+                <span class="shrink-0 text-sm text-slate-500">2017 – 2023</span>
+              </div>
+              <div class="mt-4 space-y-4 text-sm">
+                <div>
+                  <p class="font-semibold text-navy">Organization Committee Member <span class="font-normal text-slate-500">· 2017 – 2019</span></p>
+                  <p class="mt-1 text-slate-700">Organized international congresses and assisted guest professors and keynote speakers:</p>
+                  <ul class="mt-1.5 space-y-1 text-slate-600">
+                    <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal/70"></span>ITU Molecular Biology and Genetics International Student Congress ’19</li>
+                    <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal/70"></span>ITU Molecular Biology and Genetics International Student Congress ’18</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- CONTACT ---------- -->
+        <section id="contact" class="reveal">
+          <div class="overflow-hidden rounded-3xl bg-navy-900 p-8 text-white shadow-soft sm:p-10">
+            <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.14em] text-teal-100/80">08 · Contact</p>
+                <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Let’s collaborate.</h2>
+                <p class="mt-2 max-w-md text-sm text-blue-100/80">Open to research collaborations and technical roles in biotechnology, drug development and scientific project management.</p>
+              </div>
+              <ul class="space-y-3 text-sm">
+                <li><a href="mailto:gamzesahinbas518@gmail.com" class="flex items-center gap-3 hover:text-teal-100">
+                  <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.24a2.25 2.25 0 01-1.07 1.92l-7.5 4.62a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.92V6.75"/></svg>
+                  gamzesahinbas518@gmail.com</a></li>
+                <li><a href="tel:+905319265438" class="flex items-center gap-3 hover:text-teal-100">
+                  <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.28 6.72 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.37c0-.52-.35-.97-.85-1.09l-4.42-1.11c-.44-.11-.9.06-1.17.42l-.97 1.29a1.13 1.13 0 01-1.21.38 12.04 12.04 0 01-7.14-7.14 1.13 1.13 0 01.38-1.21l1.29-.97c.36-.27.53-.73.42-1.17L6.96 3.1a1.13 1.13 0 00-1.09-.85H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                  +90 531 926 54 38</a></li>
+                <li class="flex items-center gap-3">
+                  <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.14-7.5 11.25-7.5 11.25S4.5 17.64 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                  Kağıthane, Istanbul, Türkiye</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+      © <span id="year">2026</span> Gamze Şahinbaş · Molecular Biology &amp; Biotechnology
+    </footer>
+  </main>
+
+  <!-- Back to top -->
+  <a href="#hero" id="to-top" data-scroll class="fixed bottom-5 right-5 z-40 flex h-11 w-11 translate-y-4 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 opacity-0 shadow-soft transition hover:text-navy pointer-events-none" aria-label="Back to top">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </a>
+
+  <script>
+    (function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // DOI buttons: render a link for every publication with a non-empty data-doi
+      document.querySelectorAll('.pub').forEach(function (el) {
+        var doi = (el.dataset.doi || '').trim();
+        if (!doi) return;
+        var a = document.createElement('a');
+        a.href = doi; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.className = 'mt-3 inline-flex items-center gap-1.5 rounded-md border border-slate-200 px-2.5 py-1 text-xs font-semibold text-navy hover:border-navy/40 hover:bg-navy-50';
+        a.innerHTML = 'DOI · ' + doi.replace(/^https?:\/\/(dx\.)?doi\.org\//, '') +
+          ' <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>';
+        el.appendChild(a);
+      });
+
+      // Publication filter
+      var filters = document.querySelectorAll('.pub-filter');
+      filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var f = btn.dataset.filter, shown = 0;
+          filters.forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle('bg-navy', on); b.classList.toggle('text-white', on);
+            b.classList.toggle('text-slate-600', !on);
+            b.setAttribute('aria-pressed', on);
+          });
+          document.querySelectorAll('.pub').forEach(function (p) {
+            var ok = f === 'all' || (' ' + p.dataset.tags + ' ').indexOf(' ' + f + ' ') > -1;
+            p.hidden = !ok; if (ok) shown++;
+          });
+          document.getElementById('pub-empty').classList.toggle('hidden', shown > 0);
+        });
+      });
+
+      // Reveal on scroll
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var ro = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); ro.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        reveals.forEach(function (el) { ro.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      // Top bar + back-to-top visibility (after the hero)
+      var hero = document.getElementById('hero');
+      var topbar = document.getElementById('topbar');
+      var toTop = document.getElementById('to-top');
+      function onScroll() {
+        var past = window.scrollY > hero.offsetHeight - 80;
+        topbar.classList.toggle('-translate-y-full', !past);
+        toTop.classList.toggle('opacity-0', !past);
+        toTop.classList.toggle('translate-y-4', !past);
+        toTop.classList.toggle('pointer-events-none', !past);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Active section highlighting in the CV nav
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+      function setActive() {
+        var y = window.scrollY + 140, idx = -1;
+        sections.forEach(function (s, i) { if (s && s.offsetTop <= y) idx = i; });
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) idx = sections.length - 1;
+        links.forEach(function (l, i) {
+          var on = i === idx;
+          l.setAttribute('aria-current', on ? 'true' : 'false');
+          if (on && window.innerWidth < 1024) {
+            var nav = l.closest('nav');
+            var target = l.offsetLeft - 16;
+            if (Math.abs(nav.scrollLeft - target) > 40) nav.scrollTo({ left: target, behavior: 'smooth' });
+          }
+        });
+      }
+      window.addEventListener('scroll', setActive, { passive: true });
+      setActive();
+    })();
+  </script>
+</body>
+</html>
